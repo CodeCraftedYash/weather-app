@@ -11,24 +11,25 @@ function Navbar() {
   { name: 'Contact Me', to: '/weather',icon:<IoMdContact size={20} /> },
 ];
 return (
-    <nav className='flex justify-between items-center gap-10 bg-[#2b95ff] p-4 '>
-        <h2 className='font-bold text-xl float-left'>
+    <nav className='flex justify-between items-center gap-10  p-4 min-h-[8dvh] custom-gradient'>
+        <h2 className='font-bold text-xl float-left pointer-events-none'>
             Weather-App
         </h2>
         <ul className='sm:flex gap-10 hidden'>
             {navItems.map((item) => (
-                <li key={item.to} className='whitespace-nowrap flex items-center gap-2'>
+                <li key={item.to} className='whitespace-nowrap hover:scale-105 transition-all duration-200 ease-in-out '>
                     <NavLink
                         to={item.to}
                         className={({ isActive }) =>
                             isActive
-                                ? 'text-orange-700 font-bold sm:text-[1.2rem]'
-                                : 'text-white hover:text-blue-500 sm:text-[1.2rem]'
+                                ? 'text-orange-700 font-bold sm:text-[1.2rem] flex items-center gap-2 '
+                                : 'text-white sm:text-[1.2rem] flex items-center gap-2 hover:text-green-500'
                         }
                     >
                         {item.name}
+                        <span>{item.icon}</span>
                     </NavLink>
-                    <span className='text-white'>{item.icon}</span>
+                    
                 </li>
             ))}
         </ul>
