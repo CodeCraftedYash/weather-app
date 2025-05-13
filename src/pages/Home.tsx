@@ -1,8 +1,12 @@
+import ContentSection from "../layout/ContentSection"
+import InfoSection from "../layout/InfoSection"
+
 function Home() {
   return (
-    <>
-        <h2>hfdakfdajkflsd</h2>
-    </>
+    <main className="min-h-[calc(100dvh-10dvh)]">
+        <ContentSection />
+        <InfoSection />
+    </main>
   )
 }
 
