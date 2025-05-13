@@ -22,6 +22,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100dvh;
+  background-color:white;
 }
 
 h1 {
@@ -38,7 +39,6 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -49,6 +49,9 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+.custom-text-shadow {
+  text-shadow: 3px 3px 5px rgba(41, 41, 40, 0.5),3px 3px 5px rgba(41, 41, 40, 0.5);
+}
 .custom-gradient{
   background: linear-gradient(
     to right,
@@ -56,11 +59,16 @@ button:focus-visible {
     #3379e9 30%,
     #204f9b 80%
   )}
-
+.sky-gradient{
+  background: linear-gradient(
+    to bottom,
+    #3379e9 10%,
+    #ffffff 90%
+  );
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
   }
   button {
     background-color: #f9f9f9;
