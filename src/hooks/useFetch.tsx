@@ -7,13 +7,14 @@ export function useFetch<T = any>(url: string) {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!url) return; 
+    if (!url) return;
+
     const source = axios.CancelToken.source();
 
     const fetchData = async () => {
-      setLoading(true);        
-      setError(null);          
-      setData(null);           
+      setLoading(true);
+      setError(null);
+      setData(null);
 
       try {
         const response = await axios.get<T>(url, {
@@ -24,7 +25,7 @@ export function useFetch<T = any>(url: string) {
         if (axios.isCancel(err)) {
           console.log("Request canceled:", err.message);
         } else {
-          setError(err.message || "Something went wrong");
+          setError(err?.message || "Something went wrong");
         }
       } finally {
         setLoading(false);
