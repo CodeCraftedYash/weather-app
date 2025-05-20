@@ -16,7 +16,6 @@ const SearchBar: React.FC = () => {
     const { lat, lon, display_name } = data[0];
     if (lat && lon && display_name) {
       setLocation(lat, lon, display_name);
-       console.log(`Searching for: ${data[0]?.display_name}:not found`);
     }
   }
 }, [data, setLocation]);
@@ -49,12 +48,12 @@ React.useEffect(() => {
         value={query}
         onChange={handleInputChange}
         placeholder="Search for a city..."
-        className="bg-white/90 w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="bg-white/90 w-full px-4 py-2 border-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       <button
         disabled={loading || flag}
         onClick={() => handleSearch(query)}
-        className="px-4 py-2 text-white flex flex-nowrap items-center gap-1 border-2 border-white bg-blue-500 rounded-md hover:bg-blue-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 hover:cursor-pointer"
+        className="px-4 border-2 rounded-xl py-2 text-white flex flex-nowrap items-center gap-1  bg-blue-500 hover:bg-blue-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 hover:cursor-pointer"
       >
         Search{!loading?<CiSearch className="" />:<ImCross className="text-red-500" />}
       </button>
