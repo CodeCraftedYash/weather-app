@@ -39,5 +39,5 @@ export function useFetch<T = any>(url: string) {
     };
   }, [url]);
 
-  return { data, loading, error };
+  return { data, loading, error,setError };
 }

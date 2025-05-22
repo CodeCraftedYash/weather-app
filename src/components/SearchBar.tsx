@@ -4,10 +4,11 @@ import { useLocationStore } from '../store/locationStore';
 import { CiSearch } from "react-icons/ci";
 import { ImCross } from "react-icons/im";
 import Loading from '../ui/Loading';
+import Error from '../ui/Error';
 const SearchBar: React.FC = () => {
   const [query, setQuery] = useState('');
   const [url, setUrl] = useState('');
-  const { data, loading, error } = useFetch(url);
+  const { data, loading, error, setError } = useFetch(url);
   const { setLocation } = useLocationStore();
   const [ flag,setFlag ] = useState(false);
 
@@ -16,15 +17,19 @@ const SearchBar: React.FC = () => {
     const { lat, lon, display_name } = data[0];
     if (lat && lon && display_name) {
       setLocation(lat, lon, display_name);
+      setFlag(false);
     }
   }
 }, [data, setLocation]);
 React.useEffect(() => {
-  if (error) {
+  if(data && Array.isArray(data) && data.length === 0){
+    setFlag(true);
+    setError("city not found , please search again");
+  }
+  else if (error) {
     setFlag(true);
   }
-}, [error]);
-
+}, [error,data]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
@@ -58,14 +63,7 @@ React.useEffect(() => {
         Search{!loading?<CiSearch className="" />:<ImCross className="text-red-500" />}
       </button>
       {loading&&<div className='absolute left-1/2 -translate-x-1/2 top-10'><Loading /></div>}
-    {flag &&
-        <div className="absolute left-[50%] translate-x-[-50%] top-2 text-red-500 bg-black p-4 rounded-xl text-center">
-            <span className='absolute left-4 bottom-2 font-bold scale-200 animate-pulse'>!</span>
-          {error}
-          <span className='absolute right-4 bottom-2 font-bold scale-200 animate-pulse'>!</span>
-          {flag&&<span className='absolute right-3 top-2 text-white hover:cursor-pointer hover:text-green-500 transition-colors' onClick={()=>setFlag(false)}><ImCross /></span>}
-        </div>
-    }
+      {flag && <Error error={error} setFlag={setFlag} />}
     </div>
   );
 };
