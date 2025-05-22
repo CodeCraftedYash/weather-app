@@ -1,4 +1,4 @@
-import Moon from '../assets/moon.svg'
+import Moon from '../assets/Moon.svg'
 function SunMoon({time="day"}: {time: "day" | "night"}) {
   return (
     <div>
