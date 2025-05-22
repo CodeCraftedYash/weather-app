@@ -33,7 +33,7 @@ function WeatherHeader({ date, setDate, filter, setFilter}: WeatherHeaderProps) 
     setPreviousValue(val);
   }
 
-  const filterBaseClass = "p-1 pt-0 rounded-xl hover:scale-105 box-border whitespace-nowrap ";
+  const filterBaseClass = "p-1 pt-0 rounded-xl hover:scale-105 box-border whitespace-nowrap border-2";
 
   return (
     <div className="w-full flex flex-nowrap items-center justify-between">
