@@ -27,7 +27,7 @@ function WeatherDataLayout() {
     }
     },[data,error])
   return (
-    <div className="w-[90%] h-fit md:min-h-fit p-2 bg-linear-90 from-blue-600 via-blue-400 to-blue-300 border-4 rounded-xl flex flex-col gap-2 font-bold m-auto relative md:mr-8 md:scale-105 mb-4">
+    <div className="w-[90%] h-fit md:min-h-fit p-2 bg-linear-90 from-blue-600 via-blue-400 to-blue-300 border-4 rounded-xl flex flex-col gap-2 font-bold m-auto relative md:mr-8  mb-8">
        <WeatherHeader date={date}  setDate={setDate} filter={filter} setFilter={setFilter} />
 
        {loading&&<div className="absolute left-1/2 top-1/2 -translate-x-[50%] -translate-y-[50%]"><Loading /></div>}
