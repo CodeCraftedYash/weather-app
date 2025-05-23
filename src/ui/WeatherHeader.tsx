@@ -69,7 +69,7 @@ function WeatherHeader({ date, setDate, filter, setFilter}: WeatherHeaderProps) 
         )}
       </div>
 
-      <div className="ml-2 flex flex-nowrap gap-2 whitespace-nowrap overflow-x-scroll p-1">
+      <div className="ml-2 flex flex-nowrap gap-2 whitespace-nowrap overflow-x-scroll p-1 bg-gradient-to-r from-blue-700 to-blue-400 via-blue-500 rounded-2xl">
         {filters.map( (item)  => (
           <Button
             key={item}

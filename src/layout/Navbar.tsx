@@ -22,7 +22,7 @@ return (
                         to={item.to}
                         className={({ isActive }) =>
                             isActive
-                                ? 'text-orange-700 font-bold sm:text-[1.2rem] flex items-center gap-2 '
+                                ? 'text-orange-500 font-bold sm:text-[1.2rem] flex items-center gap-2 '
                                 : 'text-white sm:text-[1.2rem] flex items-center gap-2 hover:text-green-500'
                         }
                     >
