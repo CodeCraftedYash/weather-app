@@ -8,7 +8,7 @@ function Navbar() {
     const navItems:NavItem[] = [
   { name: 'Home', to: '/',icon:<RiHome5Fill size={20} /> },
   { name: 'About', to: '/about',icon:<IoBookSharp size={20} /> },
-  { name: 'Contact Me', to: '/weather',icon:<IoMdContact size={20} /> },
+  { name: 'Contact Me', to: '/contact',icon:<IoMdContact size={20} /> },
 ];
 return (
     <nav className='flex justify-between items-center gap-10  p-4 min-h-[8dvh] custom-gradient'>
