@@ -1,9 +1,15 @@
+import { useWeatherStore } from "../store/weatherStore";
 import Cloud from "../ui/Cloud"
 import Ground from "../ui/Ground"
 import SunMoon from "../ui/SunMoon"
 import WindMill from "../ui/WindMill"
 
 function ContentSection() {
+const { maxMin } = useWeatherStore();
+const temperature = maxMin?.temperature;
+const precipitation = maxMin?.precipitation;
+const windSpeed = maxMin?.windSpeed;
+
   return (
     <div className="w-[80dvw] relative md:w-[50dvw] mx-auto mt-1 border-4 h-[45dvh]  text-black sky-gradient rounded-2xl overflow-hidden">
       <div className="w-full  h-32 absolute bottom-0">
