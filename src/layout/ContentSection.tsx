@@ -9,7 +9,7 @@ const { maxMin } = useWeatherStore();
 const temperature = maxMin?.temperature;
 const precipitation = maxMin?.precipitation;
 const windSpeed = maxMin?.windSpeed;
-
+ console.log(temperature,precipitation,windSpeed);
   return (
     <div className="w-[80dvw] relative md:w-[50dvw] mx-auto mt-1 border-4 h-[45dvh]  text-black sky-gradient rounded-2xl overflow-hidden">
       <div className="w-full  h-32 absolute bottom-0">
