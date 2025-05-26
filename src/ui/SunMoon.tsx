@@ -83,7 +83,7 @@ function SunMoon({time="day"}: {time: "day" | "night"}) {
       </clipPath>
     </defs>
   </svg> :
-            <img src={Moon} alt="moon" className="w-[20dvw] h-[20dvh] md:w-[10dvw] md:h-[10dvh] absolute top-0 left-0" />}
+            <img src={Moon} alt="moon" className="w-[20dvw] h-[20dvh] md:w-[10dvw] md:h-[10dvh]" />}
     </div>
   )
 }
