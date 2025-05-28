@@ -79,7 +79,13 @@ const [containerHeight, setContainerHeight] = useState(0);
           transition:{ duration:40,ease:"linear",repeat:Infinity}
         }}
         ><div className="scale-[40%] absolute origin-top-left"><Cloud cloudColorChoice={`${precipitation?.max?precipitation.max>=0.5?"black":"white":"white"}`}/></div></motion.div>
-        <RainCanvas isActive={precipitation?.max?precipitation.max>=0.5?true:false:false} ContainerHeight={containerHeight} ContainerWidth={containerWidth}/>
+        {precipitation?.max && precipitation.max >= 0.5 && <motion.div
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        exit={{opacity:0}}
+        transition={{duration:0.5}}
+        ><RainCanvas isActive={true} ContainerHeight={containerHeight} ContainerWidth={containerWidth}/>
+        </motion.div>}
     </motion.div> 
   )
 }
