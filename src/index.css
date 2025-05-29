@@ -3,7 +3,6 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   font-synthesis: none;
@@ -72,10 +71,4 @@ button:focus-visible {
     transform: rotateX(20deg) rotateY(20deg);
 }
 @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
