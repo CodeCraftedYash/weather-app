@@ -4,9 +4,10 @@ const windSpeedCalNumber =
   windSpeed !== undefined
     ? windSpeed >= 19
       ? 0.8
-      : windSpeed > 15
+      : windSpeed > 12
+      ? 1.3
+      : windSpeed > 9
       ? 2
-      : 3.5
     : 5;
 
 const transition = {
